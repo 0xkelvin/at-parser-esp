@@ -1,0 +1,26 @@
+[package]
+name = "espresso"
+description = "AT based driver crate for ESP8266 WiFi modules"
+homepage = "https://github.com/dbrgn/espresso/"
+version = "0.1.0"
+authors = ["Danilo Bargen <mail@dbrgn.ch>"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+atat = "0.15"
+embedded-hal = "=1.0.0-alpha.6"
+heapless = "0.7"
+nb = "1"
+no-std-net = "0.6"
+numtoa = "0.2"
+env_logger = "0.6"
+fugit = "0.3"
+log = "0.4"
+serialport = { git = "https://gitlab.com/dbrgn/serialport-rs", branch = "embedded", features = ["embedded"], default_features = false }
+void = "1"
+
+[[example]]
+name = "linux"
+required-features = ["no-std-net/std"]
